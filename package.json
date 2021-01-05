@@ -1,0 +1,40 @@
+{
+  "name": "derive-store",
+  "version": "1.0.0",
+  "description": "Derive ecommerce store using MERN",
+  "main": "server.js",
+  "type": "module",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.8",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix front-end",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix front-end && npm run build --prefix front-end"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thaiquocdang/Derive-store-ecommerce.git"
+  },
+  "author": "Jack Dang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thaiquocdang/Derive-store-ecommerce/issues"
+  },
+  "homepage": "https://github.com/thaiquocdang/Derive-store-ecommerce#readme"
+}
