@@ -16,10 +16,12 @@ import OrderScreen from './screens/OrderScreen'
 import UserListScreen from './screens/UserListScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
+import GlobalStyles from './styles/global/GlobalStyles'
 
 const App = () => {
   return (
     <Router>
+      <GlobalStyles></GlobalStyles>
       <Header />
       <main className='py-3'>
         <Container>
