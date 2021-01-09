@@ -11,3 +11,7 @@ export const setFont = {
   main: "font-family: 'Lato', sans-serif; ",
   slanted: "font-family: 'Caveat', cursive;",
 }
+
+export const setLetterSpacing = (number: number = 2) => {
+  return `letter-spacing: ${number}px`
+}

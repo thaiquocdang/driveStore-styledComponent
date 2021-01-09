@@ -7,6 +7,7 @@ import { listProductDetails } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { AllState } from "../type/Store";
+import { PrimaryButton } from '../styles/global/Button'
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1)
@@ -105,6 +106,7 @@ const ProductScreen = ({ match, history }) => {
                   >
                     Add To Cart
                   </Button>
+                  <PrimaryButton>add to cart</PrimaryButton>
                 </ListGroup.Item>
               </ListGroup>
             </Card>
