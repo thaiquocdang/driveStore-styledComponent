@@ -17,12 +17,14 @@ import UserListScreen from './screens/UserListScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import GlobalStyles from './styles/global/GlobalStyles'
+import Header2 from './components/Header2'
 
 const App = () => {
   return (
     <Router>
       <GlobalStyles></GlobalStyles>
       <Header />
+      <Header2 />
       <main className='py-3'>
         <Container>
           <Route path='/login' component={LoginScreen} />

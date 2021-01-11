@@ -81,6 +81,12 @@ const CartScreen = ({ match, location, history }) => {
                     >
                       <i className="far fa-trash-alt"></i>
                     </Button>
+                    <button
+                      onClick={() => handleRemoveItem(item.id)}
+                    >
+                      <i className="far fa-trash-alt"></i>
+                    </button>
+
                   </Col>
                 </Row>
               </ListGroup.Item>

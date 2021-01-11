@@ -1,11 +1,12 @@
 import { css } from 'styled-components'
+import { flexProps } from '../type/Types'
 
 export const setColor = {
   primaryColor: '#b8a284',
   mainWhite: '#fff',
   mainBlack: '#000000',
-  mainGrey: '#ececec',
-  lightGrey: '#f7f7f7',
+  darkGrey: '#333333',
+  lightGrey: '#9ba5a8',
 }
 export const setFont = {
   main: "font-family: 'Lato', sans-serif; ",
@@ -16,36 +17,21 @@ export const setLetterSpacing = (number: number = 2) => {
   return `letter-spacing: ${number}px`
 }
 
-const sizes = {
-  large: '1200px',
-  desktop: '992px',
-  tablet: '768px',
-  phone: '576px',
-  miniPhone: '320px',
+export const setFlex = (props?: flexProps) => {
+  props = { direction: 'row', x: 'center', y: 'center', ...props }
+  return `display: flex; flex-direction: ${props.direction}; align-items:${props.y}; justify-content: ${props.x} `
 }
 
 export const breakpoints = {
-  sm: 20,
-  md: 30,
-  lg: 45,
-  xl: 60,
+  large: 1200,
+  desktop: 992,
+  tablet: 768,
+  phone: 576,
+  miniPhone: 320,
 }
 
-//Iterate through the sizes and create a media template
-// export const media = (Object.keys(sizes) as Array<keyof typeof sizes>).reduce(
-//   (acc, label) => {
-//     acc[label] = ({ ...style }) =>
-//       css`
-//         @media (max-width: ${sizes[label]}) {
-//           ${css({ ...style })}
-//         }
-//       `
-//     return acc
-//   },
-//   {} as { [index: string]: Function }
-// )
-
+//media queries template
 export const mediaQueries = (key: keyof typeof breakpoints) => {
   return (style: TemplateStringsArray | String) =>
-    `@media (min-width: ${breakpoints[key]}em) { ${style} }`
+    `@media (max-width: ${breakpoints[key]}px) { ${style} }`
 }

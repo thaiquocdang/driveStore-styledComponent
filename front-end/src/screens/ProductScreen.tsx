@@ -7,7 +7,7 @@ import { listProductDetails } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { AllState } from "../type/Store";
-import { PrimaryButton } from '../styles/global/Button'
+import { PrimaryButton, SecondaryButton } from '../styles/global/Button'
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1)
@@ -30,6 +30,10 @@ const ProductScreen = ({ match, history }) => {
     <>
       <Link className="btn btn-dark my-3" to="/">
         Go Back
+      </Link>
+      <Link to="/">
+        <SecondaryButton> Go Back</SecondaryButton>
+       
       </Link>
       {loading ? (
         <Loader />
@@ -106,7 +110,7 @@ const ProductScreen = ({ match, history }) => {
                   >
                     Add To Cart
                   </Button>
-                  <PrimaryButton>add to cart</PrimaryButton>
+                  <PrimaryButton t='1rem' >add to cart</PrimaryButton>
                 </ListGroup.Item>
               </ListGroup>
             </Card>

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { buttonProps } from '../../type/Types'
 import { setColor, setLetterSpacing, mediaQueries } from '../styles'
-let color = 'red'
+
 export const PrimaryButton = styled.button<buttonProps>`
   display: inline-block;
   background: ${setColor.mainBlack};
@@ -17,10 +17,18 @@ export const PrimaryButton = styled.button<buttonProps>`
   ${(props) =>
     `margin: ${props.t || 0} ${props.r || 0} ${props.b || 0} ${props.l || 0}`};
 
-  ${mediaQueries('md')(`
-    background-color: green;
+  ${mediaQueries('tablet')(`
+    border-radius: 40px;
+    background-color: ${setColor.mainWhite};
     color: ${setColor.mainBlack}
   `)};
 `
 
-export const secondaryButton = styled(PrimaryButton)``
+export const SecondaryButton = styled(PrimaryButton)`
+  background: ${setColor.darkGrey};
+
+  &:hover {
+    background-color: transparent;
+    color: ${setColor.darkGrey};
+  }
+`
