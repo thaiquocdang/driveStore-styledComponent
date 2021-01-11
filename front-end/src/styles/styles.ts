@@ -4,7 +4,7 @@ export const setColor = {
   primaryColor: '#b8a284',
   mainWhite: '#fff',
   mainBlack: '#000000',
-  mainGrey: 'ececec',
+  mainGrey: '#ececec',
   lightGrey: '#f7f7f7',
 }
 export const setFont = {
@@ -17,15 +17,35 @@ export const setLetterSpacing = (number: number = 2) => {
 }
 
 const sizes = {
-  large: 1200,
-  desktop: 992,
-  tablet: 768,
-  phone: 576,
-  miniPhone: 320,
+  large: '1200px',
+  desktop: '992px',
+  tablet: '768px',
+  phone: '576px',
+  miniPhone: '320px',
 }
+
+export const breakpoints = {
+  sm: 20,
+  md: 30,
+  lg: 45,
+  xl: 60,
+}
+
 //Iterate through the sizes and create a media template
-export const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (style: String) =>
-    `@media (min-width: ${sizes[label]}) { ${style} }`
-  return acc
-}, {} as { [index: string]: Function })
+// export const media = (Object.keys(sizes) as Array<keyof typeof sizes>).reduce(
+//   (acc, label) => {
+//     acc[label] = ({ ...style }) =>
+//       css`
+//         @media (max-width: ${sizes[label]}) {
+//           ${css({ ...style })}
+//         }
+//       `
+//     return acc
+//   },
+//   {} as { [index: string]: Function }
+// )
+
+export const mediaQueries = (key: keyof typeof breakpoints) => {
+  return (style: TemplateStringsArray | String) =>
+    `@media (min-width: ${breakpoints[key]}em) { ${style} }`
+}
